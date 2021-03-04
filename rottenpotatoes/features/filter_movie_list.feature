@@ -33,7 +33,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step to "submit" the search form on the homepage
   And I press "ratings_submit"
   
-  Then I am on the home page
+  Then I should be on the RottenPotatoes home page
   
   # enter step(s) to ensure that PG and R movies are visible
   And I should see the following movies: The Incredibles, Raiders of the Lost Ark, The Terminator, When Harry Met Sally, Amelie
@@ -46,5 +46,5 @@ Scenario: all ratings selected
   Given I am on the home page
   When I check the following ratings: PG, R, G, PG-13
   And I press "ratings_submit"
-  Then I am on the home page
+  Then I should be on the RottenPotatoes home page
   And I should see all the movies
