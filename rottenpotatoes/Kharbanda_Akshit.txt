@@ -28,7 +28,7 @@ Feature: display list of movies filtered by MPAA rating
     When I uncheck the following ratings: G, PG-13                                                                                # features/step_definitions/movie_steps.rb:34
     # enter step to "submit" the search form on the homepage
     And I press "ratings_submit"                                                                                                  # features/step_definitions/web_steps.rb:52
-    Then I am on the home page                                                                                                    # features/step_definitions/web_steps.rb:44
+    Then I should be on the RottenPotatoes home page                                                                              # features/step_definitions/web_steps.rb:230
     # enter step(s) to ensure that PG and R movies are visible
     And I should see the following movies: The Incredibles, Raiders of the Lost Ark, The Terminator, When Harry Met Sally, Amelie # features/step_definitions/movie_steps.rb:42
     # enter step(s) to ensure that other movies are not visible
@@ -39,7 +39,7 @@ Feature: display list of movies filtered by MPAA rating
     Given I am on the home page                         # features/step_definitions/web_steps.rb:44
     When I check the following ratings: PG, R, G, PG-13 # features/step_definitions/movie_steps.rb:34
     And I press "ratings_submit"                        # features/step_definitions/web_steps.rb:52
-    Then I am on the home page                          # features/step_definitions/web_steps.rb:44
+    Then I should be on the RottenPotatoes home page    # features/step_definitions/web_steps.rb:230
     And I should see all the movies                     # features/step_definitions/movie_steps.rb:52
 
 Feature: display list of movies sorted by different criteria
@@ -65,7 +65,7 @@ Feature: display list of movies sorted by different criteria
 
   Scenario: sort movies alphabetically                              # features/sort_movie_list.feature:25
     When I follow "Movie Title"                                     # features/step_definitions/web_steps.rb:56
-    Then I am on the home page                                      # features/step_definitions/web_steps.rb:44
+    Then I should be on the RottenPotatoes home page                # features/step_definitions/web_steps.rb:230
     And I should see "2001: A Space Odyssey" before "Aladdin"       # features/step_definitions/movie_steps.rb:19
     And I should see "Aladdin" before "Amelie"                      # features/step_definitions/movie_steps.rb:19
     And I should see "Amelie" before "Chicken Run"                  # features/step_definitions/movie_steps.rb:19
@@ -78,7 +78,7 @@ Feature: display list of movies sorted by different criteria
 
   Scenario: sort movies in increasing order of release date                   # features/sort_movie_list.feature:39
     When I follow "Release Date"                                              # features/step_definitions/web_steps.rb:56
-    Then I am on the home page                                                # features/step_definitions/web_steps.rb:44
+    Then I should be on the RottenPotatoes home page                          # features/step_definitions/web_steps.rb:230
     And I should see "2001: A Space Odyssey" before "Raiders of the Lost Ark" # features/step_definitions/movie_steps.rb:19
     And I should see "Raiders of the Lost Ark" before "The Terminator"        # features/step_definitions/movie_steps.rb:19
     And I should see "The Terminator" before "When Harry Met Sally"           # features/step_definitions/movie_steps.rb:19
@@ -91,4 +91,4 @@ Feature: display list of movies sorted by different criteria
 
 4 scenarios (4 passed)
 46 steps (46 passed)
-0m1.013s
+0m0.582s
